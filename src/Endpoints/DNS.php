@@ -157,7 +157,7 @@ class DNS implements API
 
     public function scan(string $zoneID): bool
     {
-        $user = $this->adapter->delete('zones/' . $zoneID . '/dns_records/scan');
+        $user = $this->adapter->post('zones/' . $zoneID . '/dns_records/scan');
 
         $this->body = json_decode($user->getBody(), false);
 
